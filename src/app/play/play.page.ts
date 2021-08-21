@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayPage implements OnInit {
 
+  showSearchbar: boolean;
+
   constructor() { }
 
   ngOnInit() {
