@@ -2,18 +2,18 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalController, ToastController, Config } from '@ionic/angular';
 
-import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
+import { PuzzlesFilterPage } from '../puzzles-filter/puzzles-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
 
 @Component({
-  selector: 'page-schedule',
-  templateUrl: 'schedule.html',
-  styleUrls: ['./schedule.scss'],
+  selector: 'page-puzzles',
+  templateUrl: 'puzzles.html',
+  styleUrls: ['./puzzles.scss'],
 })
-export class SchedulePage implements OnInit {
+export class PuzzlesPage implements OnInit {
   // Gets a reference to the list element
-  @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
+  @ViewChild('puzzlesList', { static: true }) puzzlesList: IonList;
 
   ios: boolean;
   dayIndex = 0;
@@ -38,15 +38,15 @@ export class SchedulePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.updateSchedule();
+    this.updatePuzzles();
 
     this.ios = this.config.get('mode') === 'ios';
   }
 
-  updateSchedule() {
-    // Close any open sliding items when the schedule updates
-    if (this.scheduleList) {
-      this.scheduleList.closeSlidingItems();
+  updatePuzzles() {
+    // Close any open sliding items when the puzzles updates
+    if (this.puzzlesList) {
+      this.puzzlesList.closeSlidingItems();
     }
 
     this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
@@ -57,7 +57,7 @@ export class SchedulePage implements OnInit {
 
   async presentFilter() {
     const modal = await this.modalCtrl.create({
-      component: ScheduleFilterPage,
+      component: PuzzlesFilterPage,
       swipeToClose: true,
       presentingElement: this.routerOutlet.nativeEl,
       componentProps: { excludedTracks: this.excludeTracks }
@@ -67,7 +67,7 @@ export class SchedulePage implements OnInit {
     const { data } = await modal.onWillDismiss();
     if (data) {
       this.excludeTracks = data;
-      this.updateSchedule();
+      this.updatePuzzles();
     }
   }
 
@@ -116,7 +116,7 @@ export class SchedulePage implements OnInit {
           handler: () => {
             // they want to remove this session from their favorites
             this.user.removeFavorite(sessionData.name);
-            this.updateSchedule();
+            this.updatePuzzles();
 
             // close the sliding item and hide the option buttons
             slidingItem.close();

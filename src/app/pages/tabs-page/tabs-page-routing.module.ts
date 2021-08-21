@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
-import { SchedulePage } from '../schedule/schedule';
-
+import { PuzzlesPage } from '../puzzles/puzzles';
+import { PlayPage } from '../../play/play.page';
 
 const routes: Routes = [
   {
@@ -10,11 +10,24 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: 'puzzles',
         children: [
           {
             path: '',
-            component: SchedulePage,
+            component: PuzzlesPage,
+          },
+          {
+            path: 'session/:sessionId',
+            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+          }
+        ]
+      },
+      {
+        path: 'play',
+        children: [
+          {
+            path: '',
+            component: PlayPage,
           },
           {
             path: 'session/:sessionId',
@@ -59,7 +72,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/app/tabs/schedule',
+        redirectTo: '/app/tabs/puzzles',
         pathMatch: 'full'
       }
     ]

@@ -3,23 +3,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { SchedulePage } from './schedule';
-import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
-import { SchedulePageRoutingModule } from './schedule-routing.module';
+import { PuzzlesPage } from './puzzles';
+import { PuzzlesFilterPage } from '../puzzles-filter/puzzles-filter';
+import { PuzzlesPageRoutingModule } from './puzzles-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SchedulePageRoutingModule
+    PuzzlesPageRoutingModule
   ],
   declarations: [
-    SchedulePage,
-    ScheduleFilterPage
+    PuzzlesPage,
+    PuzzlesFilterPage
   ],
   entryComponents: [
-    ScheduleFilterPage
+    PuzzlesFilterPage
   ]
 })
-export class ScheduleModule { }
+export class PuzzlesModule { }
