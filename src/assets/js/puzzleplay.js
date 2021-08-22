@@ -1,7 +1,10 @@
 var zIndex=1;
 var host='https://www.icalendar37.net/v/external_resources/';
 
+alert("Javascript executed");
+
 pezaSeleccionada= false;
+
 function crearDreta(i){
 	//return {draw:" l -10,50 l 10,50 ",invers:" l  -10,-50 l 10,-50 "}	
     var path =[

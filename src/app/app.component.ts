@@ -20,9 +20,9 @@ import { UserData } from './providers/user-data';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Puzzles',
+      title: 'Free Puzzles',
       url: '/app/tabs/puzzles',
-      icon: 'extension-puzzle'
+      icon: 'images'
     },
     {
       title: 'Play Game',
@@ -30,14 +30,14 @@ export class AppComponent implements OnInit {
       icon: 'game-controller'
     },
     {
-      title: 'Speakers',
-      url: '/app/tabs/speakers',
-      icon: 'people'
+      title: 'My Puzzles',
+      url: '/app/tabs/mypuzzles',
+      icon: 'extension-puzzle'
     },
     {
       title: 'Map',
       url: '/app/tabs/map',
-      icon: 'map'
+      icon: 'diamond'
     },
     {
       title: 'About',

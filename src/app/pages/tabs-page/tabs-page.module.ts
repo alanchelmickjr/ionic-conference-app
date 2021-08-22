@@ -1,4 +1,4 @@
-import { PlayPageModule } from './../../play/play.module';
+import { PlayPageModule } from '../play/play.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -10,8 +10,8 @@ import { AboutModule } from '../about/about.module';
 import { MapModule } from '../map/map.module';
 import { PuzzlesModule } from '../puzzles/puzzles.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
-import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
-import { SpeakerListModule } from '../speaker-list/speaker-list.module';
+import { MyPuzzlesDetailModule } from '../mypuzzles-detail/mypuzzles-detail.module';
+import { MyPuzzlesListModule } from '../mypuzzles-list/mypuzzles-list.module';
 
 @NgModule({
   imports: [
@@ -22,8 +22,8 @@ import { SpeakerListModule } from '../speaker-list/speaker-list.module';
     PuzzlesModule,
     PlayPageModule,
     SessionDetailModule,
-    SpeakerDetailModule,
-    SpeakerListModule,
+    MyPuzzlesDetailModule,
+    MyPuzzlesListModule,
     TabsPageRoutingModule
   ],
   declarations: [

@@ -53,17 +53,17 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/ma
 | -----------------| -----|
 | ![Android Puzzles](/resources/screenshots/android-puzzles.png) | ![iOS Puzzles](/resources/screenshots/ios-puzzles.png) |
 
-### [Speakers Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/speaker-list/speaker-list.html)
+### [My Puzzles Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/mypuzzles-list/mypuzzles-list.html)
 
 | Material Design  | iOS  |
 | -----------------| -----|
-| ![Android Speakers](/resources/screenshots/android-speakers.png) | ![iOS Speakers](/resources/screenshots/ios-speakers.png) |
+| ![Android My Puzzles](/resources/screenshots/android-mypuzzles.png) | ![iOS My Puzzles](/resources/screenshots/ios-mypuzzles.png) |
 
-### [Speaker Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/speaker-detail/speaker-detail.html)
+### [Mypuzzles Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/mypuzzles-detail/mypuzzles-detail.html)
 
 | Material Design  | iOS  |
 | -----------------| -----|
-| ![Android Speaker Detail](/resources/screenshots/android-speaker-detail.png) | ![iOS Speaker Detail](/resources/screenshots/ios-speaker-detail.png) |
+| ![Android Mypuzzles Detail](/resources/screenshots/android-mypuzzles-detail.png) | ![iOS Mypuzzles Detail](/resources/screenshots/ios-mypuzzles-detail.png) |
 
 ### [About Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/about/about.html)
 

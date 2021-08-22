@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: 'play',
-    loadChildren: () => import('./play/play.module').then( m => m.PlayPageModule)
+    loadChildren: () => import('./pages/play/play.module').then( m => m.PlayPageModule)
   },
 ];
 

@@ -25,7 +25,7 @@ export class ConferenceData {
 
   processData(data: any) {
     // just some good 'ol JS fun with objects and arrays
-    // build up the data by linking speakers to sessions
+    // build up the data by linking mypuzzles to sessions
     this.data = data;
 
     // loop through each day in the puzzles
@@ -34,16 +34,16 @@ export class ConferenceData {
       day.groups.forEach((group: any) => {
         // loop through each session in the timeline group
         group.sessions.forEach((session: any) => {
-          session.speakers = [];
-          if (session.speakerNames) {
-            session.speakerNames.forEach((speakerName: any) => {
-              const speaker = this.data.speakers.find(
-                (s: any) => s.name === speakerName
+          session.mypuzzles = [];
+          if (session.mypuzzlesNames) {
+            session.mypuzzlesNames.forEach((mypuzzlesName: any) => {
+              const mypuzzles = this.data.mypuzzles.find(
+                (s: any) => s.name === mypuzzlesName
               );
-              if (speaker) {
-                session.speakers.push(speaker);
-                speaker.sessions = speaker.sessions || [];
-                speaker.sessions.push(session);
+              if (mypuzzles) {
+                session.mypuzzles.push(mypuzzles);
+                mypuzzles.sessions = mypuzzles.sessions || [];
+                mypuzzles.sessions.push(session);
               }
             });
           }
@@ -131,10 +131,10 @@ export class ConferenceData {
     session.hide = !(matchesQueryText && matchesTracks && matchesSegment);
   }
 
-  getSpeakers() {
+  getMyPuzzless() {
     return this.load().pipe(
       map((data: any) => {
-        return data.speakers.sort((a: any, b: any) => {
+        return data.mypuzzles.sort((a: any, b: any) => {
           const aName = a.name.split(' ').pop();
           const bName = b.name.split(' ').pop();
           return aName.localeCompare(bName);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import '../../../assets/js/puzzleplay.js';
 
 @Component({
   selector: 'app-play',

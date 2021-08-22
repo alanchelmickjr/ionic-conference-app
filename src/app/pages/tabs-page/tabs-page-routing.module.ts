@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { PuzzlesPage } from '../puzzles/puzzles';
-import { PlayPage } from '../../play/play.page';
+import { PlayPage } from '../play/play.page';
 
 const routes: Routes = [
   {
@@ -36,19 +36,19 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'speakers',
+        path: 'mypuzzles',
         children: [
           {
             path: '',
-            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+            loadChildren: () => import('../mypuzzles-list/mypuzzles-list.module').then(m => m.MyPuzzlesListModule)
           },
           {
             path: 'session/:sessionId',
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
-            path: 'speaker-details/:speakerId',
-            loadChildren: () => import('../speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
+            path: 'mypuzzles-details/:mypuzzlesId',
+            loadChildren: () => import('../mypuzzles-detail/mypuzzles-detail.module').then(m => m.MyPuzzlesDetailModule)
           }
         ]
       },
