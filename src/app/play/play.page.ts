@@ -11,7 +11,5 @@ export class PlayPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }
