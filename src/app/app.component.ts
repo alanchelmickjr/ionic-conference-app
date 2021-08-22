@@ -35,14 +35,14 @@ export class AppComponent implements OnInit {
       icon: 'extension-puzzle'
     },
     {
-      title: 'Map',
-      url: '/app/tabs/map',
+      title: 'Rewards',
+      url: '/app/tabs/rewards',
       icon: 'diamond'
     },
     {
-      title: 'About',
+      title: 'Create Puzzle',
       url: '/app/tabs/about',
-      icon: 'information-circle'
+      icon: 'hammer'
     }
   ];
   loggedIn = false;

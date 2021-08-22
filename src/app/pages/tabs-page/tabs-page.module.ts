@@ -7,7 +7,7 @@ import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
 import { AboutModule } from '../about/about.module';
-import { MapModule } from '../map/map.module';
+import { RewardsModule } from '../rewards/rewards.module';
 import { PuzzlesModule } from '../puzzles/puzzles.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { MyPuzzlesDetailModule } from '../mypuzzles-detail/mypuzzles-detail.module';
@@ -18,7 +18,7 @@ import { MyPuzzlesListModule } from '../mypuzzles-list/mypuzzles-list.module';
     AboutModule,
     CommonModule,
     IonicModule,
-    MapModule,
+    RewardsModule,
     PuzzlesModule,
     PlayPageModule,
     SessionDetailModule,

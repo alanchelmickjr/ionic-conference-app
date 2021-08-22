@@ -53,11 +53,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'map',
+        path: 'rewards',
         children: [
           {
             path: '',
-            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
+            loadChildren: () => import('../rewards/rewards.module').then(m => m.RewardsModule)
           }
         ]
       },
