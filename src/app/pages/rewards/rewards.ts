@@ -3,12 +3,12 @@ import { ConferenceData } from '../../providers/conference-data';
 import { Platform } from '@ionic/angular';
 import { DOCUMENT} from '@angular/common';
 
-import { darkStyle } from './map-dark-style';
+import { darkStyle } from './rewards-dark-style';
 
 @Component({
-  selector: 'page-map',
-  templateUrl: 'map.html',
-  styleUrls: ['./map.scss']
+  selector: 'page-rewards',
+  templateUrl: 'rewards.html',
+  styleUrls: ['./rewards.scss']
 })
 export class MapPage implements AfterViewInit {
   @ViewChild('mapCanvas', { static: true }) mapElement: ElementRef;
@@ -30,12 +30,12 @@ export class MapPage implements AfterViewInit {
       'YOUR_API_KEY_HERE'
     );
 
-    let map;
+    let rewards;
 
     this.confData.getMap().subscribe((mapData: any) => {
       const mapEle = this.mapElement.nativeElement;
 
-      map = new googleMaps.Map(mapEle, {
+      rewards = new googleMaps.Map(mapEle, {
         center: mapData.find((d: any) => d.center),
         zoom: 16,
         styles: style
@@ -48,17 +48,17 @@ export class MapPage implements AfterViewInit {
 
         const marker = new googleMaps.Marker({
           position: markerData,
-          map,
+          rewards,
           title: markerData.name
         });
 
         marker.addListener('click', () => {
-          infoWindow.open(map, marker);
+          infoWindow.open(rewards, marker);
         });
       });
 
-      googleMaps.event.addListenerOnce(map, 'idle', () => {
-        mapEle.classList.add('show-map');
+      googleMaps.event.addListenerOnce(rewards, 'idle', () => {
+        mapEle.classList.add('show-rewards');
       });
     });
 
@@ -67,10 +67,10 @@ export class MapPage implements AfterViewInit {
         if (mutation.attributeName === 'class') {
           const el = mutation.target as HTMLElement;
           isDark = el.classList.contains('dark-theme');
-          if (map && isDark) {
-            map.setOptions({styles: darkStyle});
-          } else if (map) {
-            map.setOptions({styles: []});
+          if (rewards && isDark) {
+            rewards.setOptions({styles: darkStyle});
+          } else if (rewards) {
+            rewards.setOptions({styles: []});
           }
         }
       });
