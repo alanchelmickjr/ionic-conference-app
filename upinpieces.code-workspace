@@ -2,6 +2,10 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "upinpieces_ionic",
+			"path": "www/upinpieces_ionic"
 		}
 	],
 	"settings": {}
